@@ -1,0 +1,52 @@
+@media screen and (max-width:900px) {
+    .anuncio img{
+        display: none;
+    }
+
+    .descricao{
+        background-image: linear-gradient(-90deg, rgb(216, 164, 150),rgba(0,0,0,.30)120%), url("../img/Example01.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .products{
+        display: block;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+        width: 50%;
+    }
+
+    .responsive-separator{
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width:650px) {
+    .title{
+        display: none;
+    }
+
+    .navbar-info i{
+        font-size: 25px !important;
+    }
+    
+    .navbar-info div p{
+        font-size: 9px;
+        letter-spacing: 5px;
+    }
+
+    .navbar-info div h4{
+        font-size: 13px;
+    }
+
+    .menu-item{
+        margin-right: 5%;
+    }
+
+    .menu-item i{
+        display: none;
+    }
+}
