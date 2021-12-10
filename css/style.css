@@ -1,3 +1,11 @@
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 *{
     font-family: 'Playfair Display', serif;
@@ -234,4 +242,147 @@ body{
 
 .item-product{
     height: 200px;
+}
+
+/*---------------- MAIS VENDIDOS ----------------*/
+
+.destaques{
+    margin: 40px 80px 100px 80px;
+}
+
+.destaques-title{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.products{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.destaques-title i{
+    padding-right: 14px;
+}
+
+hr{
+    border-top: 1px solid rgba(26, 26, 26, 0.075);
+    margin: 10px 0px 30px -10px;
+}
+
+.product-box{
+    margin: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5%;
+
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+
+    font-family: 'Open Sans',sans-serif;
+    text-decoration: none;
+}
+
+.image-box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.product-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.product-img a img{
+    width: 100%;
+    height: 100%;
+
+    object-position: center;
+    animation: fade 0.4s;
+
+    border-radius: 5%;
+}
+.product-img-back{
+    display: none;
+ }
+ .product-img-container:hover .product-img-back{
+     display: block;
+ }
+ .product-img-container:hover .product-img-front{
+     display: none;
+ }
+
+ .product-box-offer{
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    width: 65px;
+    height: 24px;
+    color: #ffffff;
+    background-color: rgb(221, 111, 94);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    transition: none !important;
+    animation: none;
+    z-index: 100;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.product-box-text{
+    margin-top: 5px;
+    font-family: 'Open Sans',sans-serif;
+}
+.product-title{
+   color: #333333;
+   font-weight: 600;
+   transition: all ease 0.3s;
+   text-decoration: none;
+}
+.product-title:hover{
+   opacity: 0.7;
+   transition: all ease 0.3s;
+}
+.product-category{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+   color: #ff25257c;
+}
+.product-category span{
+   color: #acacac;
+   font-size: 0.9rem;
+   margin:5px 0px;
+}
+.price-buy{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 8px;
+}
+.price-buy .p-price{
+   font-size: 1.3rem;
+   color: #333333;
+   font-weight: 700;
+}
+.price-buy .p-buy-btn{
+   color: rgb(238, 64, 37);;
+   margin: 0px 5px;
+   font-weight: 500;
+   text-decoration: none;
+}
+.price-buy .p-buy-btn:hover{
+   text-decoration: underline;
+   font-size: 1.6rem;
+   cursor: pointer;
 }

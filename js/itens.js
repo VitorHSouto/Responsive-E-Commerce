@@ -19,6 +19,20 @@ const items = [
         img: '../img/image.png',
         valor: 24.99,
         quantidade: 0
+    },
+    {
+        id: 3,
+        nome: 'Joia 3',
+        img: '../img/image.png',
+        valor: 24.99,
+        quantidade: 0
+    },
+    {
+        id: 4,
+        nome: 'Joia 3',
+        img: '../img/image.png',
+        valor: 24.99,
+        quantidade: 0
     }
 ]
 
