@@ -16,6 +16,10 @@ body{
     background-color: rgb(247, 247, 247);
 }
 
+li{
+    list-style-type: none;
+}
+
 /*---------------- NAV BAR ----------------*/
 
 .navbar{
@@ -262,8 +266,35 @@ body{
     justify-content: space-around;
 }
 
+.destaques-title h1{
+    color: rgba(36, 36, 36, 0.808);
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    font-style: italic;
+}
+
 .destaques-title i{
+    color: rgba(36, 36, 36, 0.808);
     padding-right: 14px;
+    font-size: 30px !important;
+}
+
+.title-complete{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-veja-mais{
+    color: rgb(238, 64, 37);
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+
+.product-veja-mais:hover{
+    color: rgba(238, 64, 37, 0.5);
 }
 
 hr{
@@ -376,7 +407,7 @@ hr{
    font-weight: 700;
 }
 .price-buy .p-buy-btn{
-   color: rgb(238, 64, 37);;
+   color: rgb(238, 64, 37);
    margin: 0px 5px;
    font-weight: 500;
    text-decoration: none;
@@ -385,4 +416,53 @@ hr{
    text-decoration: underline;
    font-size: 1.6rem;
    cursor: pointer;
+}
+
+
+/*---------------- RODAPÉ ----------------*/
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 25px 10px 25px 0px;
+    background-color: #313131;
+    color: white;
+    text-decoration: none;
+}
+
+footer h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.footer-text li{
+    color: rgba(255, 255, 255, 0.534);
+    list-style-type: none;
+    text-decoration: none;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 10px;
+    padding: 4px;
+
+    text-align: center;
+}
+
+.footer-text li a{
+    color: rgba(255, 255, 255, 0.534);
+    text-decoration: none;
+}
+
+.footer-text li:hover{
+    color: rgba(255, 255, 255, 0.675);
+}
+
+.footer-text li a:hover{
+    color: rgba(255, 255, 255, 0.675);
 }
