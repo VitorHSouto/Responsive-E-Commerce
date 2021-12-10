@@ -1,0 +1,237 @@
+
+*{
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(247, 247, 247);
+}
+
+/*---------------- NAV BAR ----------------*/
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    background-color: rgba(240, 240, 240, 0.507);
+    border: 2px solid rgba(5, 5, 5, 0.015);
+}
+
+.title{
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: rgb(46, 46, 46);
+}
+
+.navbar-info{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.navbar-info i{
+    font-size: 35px !important;
+    margin-right: 10px;
+    color: rgba(58, 58, 58, 0.945);
+}
+
+.navbar-info div p{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: rgba(0, 0, 0, 0.562);
+}
+
+.navbar-info div h4{
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/*---------------- NAV BAR ----------------*/
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 20%;
+    padding-right: 20%;
+
+}
+
+.menu-item{
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6%;
+
+    position: relative;
+    color: rgb(20, 20, 20);
+}
+
+.menu-item p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 10px;
+
+}
+
+.menu-item i{
+    font-size: 10px !important;
+    margin-right: 4px;
+}
+
+.menu-item p::before{
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #444;
+    position: absolute;
+    
+    top: -10px;
+    width: 0%;
+
+    transition: all ease-in-out 200ms;
+}
+
+.menu-item p:hover::before{
+    width: 70%;
+    background-color: rgba(114, 114, 114, 0.911);
+}
+
+.menu-item:hover{
+    color: rgba(85, 85, 85, 0.979);
+    cursor: pointer;
+}
+/*---------------- ANUNCIO PRIMARIO ----------------*/
+
+.anuncio img{
+    max-width: 750px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.192));
+}
+
+.anuncio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+
+}
+
+.anuncio-descricao{
+    justify-content: space-between;
+
+    margin-left: -50px;
+    height: 480px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.192));
+}
+
+.descricao{
+    background-color: rgb(216, 164, 150);
+    min-height: 80%;
+    text-align: right;
+
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.descricao h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    font-style: italic;
+    color: rgb(238, 238, 238);
+
+    padding-bottom: 15px;
+}
+
+.descricao .desc{
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    color: rgb(238, 238, 238);
+
+    padding-bottom: 10%;
+}
+
+.descricao p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: rgb(238, 238, 238);
+}
+
+.descricao i{
+    color: rgb(238, 238, 238);
+}
+
+.anuncio-imagens{
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.anuncio-imagens img{
+    max-height: 100px;
+    max-width: 100px;
+
+    padding: 10px;
+}
+
+.button {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(238, 238, 238);
+    letter-spacing: 1px;
+
+    border: none;
+    padding: 12px 30px 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    border-radius: 20px;
+}
+
+.bSobre{
+    background-color: rgb(78,69,64);
+}
+
+.bProdutos{
+    background-color: rgb(195,107,93);
+}
+
+/*---------------- PRODUTOS ----------------*/
+
+#produtos{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+}
+
+#carrinho{
+    margin: 0 auto;
+    padding: 0 2%;
+    display: block;
+}
+
+.produto-single{
+    width: 33.3%;
+    padding: 0 20px;
+}
+
+.item-product{
+    height: 200px;
+}
