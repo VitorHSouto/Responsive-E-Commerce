@@ -151,7 +151,8 @@ li{
 }
 
 .descricao{
-    background-color: rgb(216, 164, 150);
+    /*background-color: rgb(216, 164, 150);*/
+    background-image: linear-gradient(-135deg, rgb(236, 184, 170), rgb(165, 118, 115));
     min-height: 80%;
     text-align: right;
 
@@ -276,7 +277,7 @@ li{
     justify-content: left;
 }
 
-.products{
+.products, .table-responsive{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -328,7 +329,6 @@ hr{
     border: 1px solid rgba(0,0,0,0.08);
     position: relative;
 
-    font-family: 'Open Sans',sans-serif;
     text-decoration: none;
 }
 
@@ -382,12 +382,10 @@ hr{
     transition: none !important;
     animation: none;
     z-index: 100;
-    font-family: 'Open Sans',sans-serif;
 }
 
 .product-box-text{
     margin-top: 5px;
-    font-family: 'Open Sans',sans-serif;
 }
 .product-title{
    color: #333333;
@@ -418,9 +416,10 @@ hr{
    margin-top: 8px;
 }
 .price-buy .p-price{
-   font-size: 1.3rem;
-   color: #333333;
-   font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.3rem;
+    color: #333333;
+    font-weight: 700;
 }
 .price-buy .p-buy-btn{
    color: rgb(238, 64, 37);
@@ -481,4 +480,31 @@ footer h1{
 
 .footer-text li a:hover{
     color: rgba(255, 255, 255, 0.675);
+}
+
+/*---------------- ANUNCIO SECUNDARIO ----------------*/
+
+.anuncio-secundario img{
+    width: 720px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.192));
+}
+
+.anuncio-secundario{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 60px;
+}
+
+.anuncio-secundario-box{
+    height: 505px;
+    width: 100%;
+    background-image: linear-gradient(-135deg, rgb(236, 184, 170), rgb(165, 118, 115));
+}
+
+.anuncio-secundario-box h1{
+    text-align: center;
+    padding: 20px;
+    background-color: whitesmoke;
 }

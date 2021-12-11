@@ -10,18 +10,18 @@
         background-size: cover;
     }
 
-    .products{
+    .table-responsive{
         display: block;
         align-items: center;
-        justify-content: center;
-        height: 50%;
-        width: 50%;
+        justify-content: space-around;
+
+        margin-right: 5px;
     }
 
-    .responsive-separator{
-        display: block;
+    .product-box{
+        max-width: 280px;
+        min-width: 180px;
     }
-    
 }
 
 @media screen and (max-width:650px) {
