@@ -5,42 +5,36 @@ function InicializarLoja(){
     items.map((val) => {
         containerProdutos.innerHTML += `
 
-        <!--1================================-->
-        <div class="swiper-slide">
-            <!--box----------------------->
-            <div class="product-box">
-                <!--==offer==-->
-                <span class="product-box-offer">-20%</span>
-
-                <!--img-container****************-->
+        <!--================= `+val.id+` =================-->
+        <div class="product-box">
+            <div class="image-box">
+                <span class="product-box-offer">`+val.desconto+`</span>
                 <div class="product-img-container">
-    
-                <!--img=============-->
-                <div class="product-img">
-                <a href="#">
-                    <img class="product-img-front" src="`+val.img+`" alt=""/>
-                    <img class="product-img-back" src="`+val.img+`" alt=""/>
-                </a>
-                </div>
-                </div>
-
-                <!--text***************************-->
-                <div class="product-box-text">
-                    <!--category-->
-                    <div class="product-category">
-                        <span>`+val.nome+`</span>
+                    <!--img=============-->
+                    <div class="product-img">
+                        <a href="#">
+                            <img class="product-img-front" src="`+val.img+`" alt="`+val.nome+`"/>
+                            <img class="product-img-back" src="`+val.img+`" alt="`+val.nome+`"/>
+                        </a>
                     </div>
-                    <!--tile--->
-                    <a href="#" class="product-title">
+                </div>
+            </div>
+            
+            <!--text***************************-->
+            <div class="product-box-text">
+                <!--category-->
+                <div class="product-category">
+                    <span>`+val.descricao+`</span>
+                </div>
+                <!--tile--->
+                <a href="#" class="product-title">
                     `+val.nome+`
-                    </a>
-                    <!--Price--->
-                    <div class="price-buy">
-                        <span class="p-price">`+val.valor+`</span>
-                        <a href="#" class="p-buy-btn">Adicionar ao Carrinho</a>
-                    </div>
+                </a>
+                <!--Price--->
+                <div class="price-buy">
+                    <span class="p-price">`+val.valor+`</span>
+                    <i class="material-icons p-buy-btn">add_circle</i>
                 </div>
-
             </div>
         </div> 
 
