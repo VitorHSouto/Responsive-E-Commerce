@@ -5,7 +5,6 @@ const items = [
         descricao: 'Pingente',
         img: '../img/Produtos/00.jpg',
         valor: 59.35,
-        desconto: "20%",
         quantidade: 0
     },
     {
@@ -14,7 +13,6 @@ const items = [
         descricao: 'Escapulário',
         img: '../img/Produtos/01.jpg',
         valor: 34.99,
-        desconto: "",
         quantidade: 0
     },
     {
@@ -23,7 +21,6 @@ const items = [
         descricao: 'Brinco',
         img: '../img/Produtos/02.jpg',
         valor: 13.99,
-        desconto: "",
         quantidade: 0
     },
     {
@@ -32,7 +29,6 @@ const items = [
         descricao: 'Tornozeleira',
         img: '../img/Produtos/03.jpg',
         valor: 12.99,
-        desconto: "30%",
         quantidade: 0
     },
 ]

@@ -30,17 +30,20 @@
         <div class="navbar">
             <div class="navbar-info">
                 <i class="material-icons">call</i>
-                <div>
+                <div class="info-telefone">
                     <p>CONTATO</p>
                     <h4>34 99999-9999</h4>
                 </div>
             </div>
             <h1 class="title">RS Pratas</h1>
             <div class="navbar-info">
-                <i class="material-icons">shopping_cart</i>
-                <div>
+                <div class="icon-carrinho">
+                    <i class="material-icons">shopping_cart</i>
+                    <p id="qnt-carrinho" class="qnt-carrinho"></p>
+                </div>
+                <div class="info-carrinho">
                     <p>CARRINHO</p>
-                    <h4>R$ 666,66</h4>
+                    <h4 id="carrinho-total">R$ 0,00</h4>
                 </div>
             </div>
         </div>
@@ -253,6 +256,10 @@
 
     </section>
 
+    <h2>Carrinho:</h2>
+    <div id="carrinho">
+    </div>
+
     <footer>
         <ul class="footer-text">
             <li>Quem somos</li>
@@ -272,9 +279,6 @@
         <h2>Produtos:</h2>
     </div> <!--Produtos-->
 
-    <!--<h2>Carrinho:</h2>
-    <div id="carrinho">
-    </div> <!--Carrinho-->
 
     
     <script src="https://kit.fontawesome.com/9ccc6f41fb.js" crossorigin="anonymous"></script>

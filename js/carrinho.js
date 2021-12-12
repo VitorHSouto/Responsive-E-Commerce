@@ -8,11 +8,10 @@ function InicializarLoja(){
         <!--================= `+val.id+` =================-->
         <div class="product-box">
             <div class="image-box">
-                <span class="product-box-offer">`+val.desconto+`</span>
                 <div class="product-img-container">
                     <!--img=============-->
                     <div class="product-img">
-                        <a href="#">
+                        <a>
                             <img class="product-img-front" src="`+val.img+`" alt="`+val.nome+`"/>
                             <img class="product-img-back" src="`+val.img+`" alt="`+val.nome+`"/>
                         </a>
@@ -27,13 +26,13 @@ function InicializarLoja(){
                     <span>`+val.descricao+`</span>
                 </div>
                 <!--tile--->
-                <a href="#" class="product-title">
+                <a" class="product-title">
                     `+val.nome+`
                 </a>
                 <!--Price--->
                 <div class="price-buy">
-                    <span class="p-price">`+val.valor+`</span>
-                    <i class="material-icons p-buy-btn">add_circle</i>
+                    <span class="p-price">R$ `+val.valor+`</span>
+                    <i class="material-icons p-buy-btn item-id" key="`+val.id+`">add_circle</i>
                 </div>
             </div>
         </div> 
@@ -44,20 +43,36 @@ function InicializarLoja(){
 
 InicializarLoja();
 
+var totalCompra = 0;
+var quantidadeItens = 0;
 function AtualizarCarrinho(){
     var containerCarrinho = document.getElementById("carrinho");
     containerCarrinho.innerHTML = "";
+    quantidadeItens = 0;
     items.map((val) => {
 
         if(val.quantidade > 0)
         {
+            totalCompra += val.valor
+            quantidadeItens += val.quantidade;
             containerCarrinho.innerHTML += `
             <p>`+val.nome+` | Quantidade: `+val.quantidade+`</p>
             <hr>
             `;
+            document.getElementById("qnt-carrinho").style.display = '';
         }
 
     })
+    var textTotal = document.getElementById("carrinho-total");
+    textTotal.textContent = "R$ " + totalCompra.toFixed(2).replace(".", ",");
+    
+    var textQuantidade = document.getElementById("qnt-carrinho");
+    textQuantidade.textContent = quantidadeItens.toString();
+}
+
+if(quantidadeItens <= 0){
+    document.getElementById("qnt-carrinho").style.display = "none";
+    document.getElementById("carrinho-total").textContent = "R$ 0,00";
 }
 
 var links = document.getElementsByClassName("item-id");

@@ -52,7 +52,7 @@ li{
     color: rgba(58, 58, 58, 0.945);
 }
 
-.navbar-info div p{
+.navbar-info .info-carrinho p, .navbar-info .info-telefone p{
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     font-size: 12px;
@@ -63,6 +63,27 @@ li{
 .navbar-info div h4{
     font-weight: 400;
     letter-spacing: 1px;
+}
+
+.icon-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 6%;
+}
+
+.qnt-carrinho{
+    margin-left: -40%;
+    margin-top: -40%;
+    padding: 0px;
+    width: 24px;
+    height: 24px;
+    font-weight: 600;
+
+    text-align: center;
+    color: white;
+    background-color: rgb(238, 64, 37);
+    border-radius: 50%;
 }
 
 /*---------------- NAV BAR ----------------*/
