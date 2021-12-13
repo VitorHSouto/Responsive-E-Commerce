@@ -68,6 +68,11 @@ function AtualizarCarrinho(){
     
     var textQuantidade = document.getElementById("qnt-carrinho");
     textQuantidade.textContent = quantidadeItens.toString();
+
+    AlertAppearCarrinho();
+    setTimeout(function(){
+        AlertDisappearCarrinho();
+    },3000);
 }
 
 if(quantidadeItens <= 0){
@@ -85,4 +90,16 @@ for (let i = 0; i < links.length; i++)
         AtualizarCarrinho();
         return false;
     })    
+}
+
+const alert = document.getElementById('alert');
+function AlertAppearCarrinho(){
+    alert.style.display = '';
+    alert.classList.add('show');
+    alert.classList.remove('hide');
+}
+
+function AlertDisappearCarrinho(){
+    alert.classList.add('hide');
+    alert.classList.remove('show');
 }
