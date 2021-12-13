@@ -10,17 +10,8 @@
         background-size: cover;
     }
 
-    .table-responsive{
-        display: block;
-        align-items: center;
-        justify-content: space-around;
-
-        margin-right: 5px;
-    }
-
     .product-box{
-        max-width: 280px;
-        min-width: 180px;
+        width: calc(95% / 3);
     }
 }
 
@@ -48,5 +39,20 @@
 
     .menu-item i{
         display: none;
+    }
+
+    .product-box{
+        width: calc(95% / 2);
+    }
+}
+
+@media screen and (max-width:400px){
+
+    .product-box{
+        width: 100%;
+    }
+
+    .anuncio{
+        margin-bottom: 20%;
     }
 }
