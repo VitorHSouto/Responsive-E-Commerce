@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css"> <!-- CSS -->
+    <link rel="stylesheet" href="./css/carrinho.css"> <!-- CSS -->
     <link rel="stylesheet" href="./css/responsive.css"> <!-- CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!--ICONS GOOGLE-->
     <script  type="module" src="./js/carrinho.js"></script>
@@ -36,13 +37,13 @@
                 </div>
             </div>
             <h1 class="title">RS Pratas</h1>
-            <div class="navbar-info">
+            <div class="navbar-info shopping-cart">
                 <div class="icon-carrinho">
-                    <i class="material-icons">shopping_cart</i>
+                    <i class="material-icons shopping-cart">shopping_cart</i>
                     <p id="qnt-carrinho" class="qnt-carrinho"></p>
                 </div>
-                <div class="info-carrinho">
-                    <p>CARRINHO</p>
+                <div class="info-carrinho shopping-cart">
+                    <p>CARRINHO</p> 
                     <h4 id="carrinho-total">R$ 0,00</h4>
                 </div>
             </div>
@@ -50,6 +51,7 @@
 
     </header>
 
+    <!-- ALERTA -->
     <div id="alert" class="alert hide" style="display: none;">
         <i class="material-icons shopping">shopping_cart</i>
         <span class="msg">Item inserido no carrinho!</span>
@@ -57,6 +59,18 @@
             <i class="material-icons cancel">cancel</i>
         </span>
     </div>
+
+    <!-- PAGINA CARRINHO -->
+    <div class="teste">
+        <div class="carrinho-preview">
+            <div class="details">
+                <i class="material-icons close-icon">cancel</i>
+            </div>
+            <div id="carrinho"></div>
+        </div>
+    </div>
+    <div class="shadow"></div>
+
 
     <div class="menu">
         <div class="menu-item">
@@ -259,10 +273,6 @@
         </div>
 
     </section>
-
-    <h2>Carrinho:</h2>
-    <div id="carrinho">
-    </div>
 
     <footer>
         <ul class="footer-text">
