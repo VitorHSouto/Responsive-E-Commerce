@@ -81,7 +81,7 @@
 }
 
 .btn-confirmar{
-    background-color: orange; /* Green */
+    background-color: rgb(221, 111, 94); /* Green */
     border: none;
     color: white;
     font-weight: bold;
@@ -90,6 +90,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 16px;
+    border-radius: 12px;
 
     position: absolute;
     bottom: 0;
@@ -97,7 +98,7 @@
 }
 .btn-confirmar:hover{
     cursor: pointer;
-    background-color: rgba(255, 166, 0, 0.726); 
+    background-color: rgba(221, 111, 94, 0.719);
 }
 
 .total-txt h1, .total-txt p{

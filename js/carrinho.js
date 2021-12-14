@@ -155,14 +155,14 @@ function goToWhatsapp() {
     items.map((val) => 
     {
         if(val.quantidade > 0)
-        msg+= "• %20" + val.nome + "\n %20 x %20" + val.quantidade + "%20 - %20 *R$ %20" + (val.valor*val.quantidade).toFixed(2).replace(".", ",") + "*%0A";
+        msg+= "▸%20" + val.nome + "\n %20 x %20" + val.quantidade + "%20 - %20 *R$ %20" + (val.valor*val.quantidade).toFixed(2).replace(".", ",") + "*%0A";
     });
 
     var url = "https://wa.me/5534991218085?text=" 
     /*+ "Name: " + name + "%0a"
     + "Phone: " + phone + "%0a"*/
     + msg  + "%0A"
-    + "Valor Total: %20" + "*R$ %20" + totalCompra.toFixed(2).replace(".", ",") + "*"; 
+    + "➤ %20 Valor Total: %20" + "*R$ %20" + totalCompra.toFixed(2).replace(".", ",") + "*"; 
 
     window.open(url, '_blank').focus();
 }
