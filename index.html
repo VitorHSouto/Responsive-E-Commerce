@@ -40,7 +40,7 @@
             <div class="navbar-info shopping-cart">
                 <div class="icon-carrinho">
                     <i class="material-icons shopping-cart">shopping_cart</i>
-                    <p id="qnt-carrinho" class="qnt-carrinho"></p>
+                    <p id="qnt-carrinho" class="qnt-carrinho" style="display: none;"></p>
                 </div>
                 <div class="info-carrinho shopping-cart">
                     <p>CARRINHO</p> 
@@ -55,21 +55,25 @@
     <div id="alert" class="alert hide" style="display: none;">
         <i class="material-icons shopping">shopping_cart</i>
         <span class="msg">Item inserido no carrinho!</span>
-        <span class="close-btn">
-            <i class="material-icons cancel">cancel</i>
-        </span>
     </div>
 
     <!-- PAGINA CARRINHO -->
-    <div class="teste">
-        <div class="carrinho-preview">
-            <div class="details">
-                <i class="material-icons close-icon">cancel</i>
+    <div class="carrinho-preview" style="display: none;">
+        <div class="details">
+            <i class="material-icons close-icon">cancel</i>
+        </div>
+        
+        <div id="carrinho"></div><!-- AQUI VAI SER ADD OS ITENS-->
+        
+        <div class="total-shopping">
+            <div class="total-txt">
+                <h1>Total:</h1>
+                <p class="total-pag-carrinho">R$ 250,32</p>
             </div>
-            <div id="carrinho"></div>
+            <button class="btn-confirmar">Confirmar Compra</button>
         </div>
     </div>
-    <div class="shadow"></div>
+    <div class="shadow" style="display: none;"></div>
 
 
     <div class="menu">

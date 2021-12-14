@@ -1,3 +1,5 @@
+/* ------------- TELA DO CARRINHO ------------- */
+
 .carrinho-preview{
     position: fixed;
     transform: translate(-50%, -50%);
@@ -43,10 +45,67 @@
 .details .close-icon{
     color: rgba(0, 0, 0, 0.65);
     font-size: 25px !important;
+    margin-bottom: -2%;
 }
 
 .close-icon:hover{
     color: rgba(0, 0, 0, 0.45);
     font-size: 26px !important;
     cursor: pointer;
+}
+
+/* ------------- VALOR TOTAL ------------- */
+
+
+
+.total-txt{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 4% 2% 2% 2%;
+}
+
+.product-carrinho{
+    display: flex;
+    align-self: center;
+    margin: -2% 2% 2% 2%;
+}
+
+.product-img-carrinho{
+    height: 10%;
+    width: 10%;
+    border-radius: 10%;
+    margin-right: 2%;
+}
+
+.btn-confirmar{
+    background-color: orange; /* Green */
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+
+    position: absolute;
+    bottom: 0;
+    margin: 4% 2% 2% 2%;
+}
+.btn-confirmar:hover{
+    cursor: pointer;
+    background-color: rgba(255, 166, 0, 0.726); 
+}
+
+.total-txt h1, .total-txt p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.total-txt h1{
+    font-weight: lighter;
 }

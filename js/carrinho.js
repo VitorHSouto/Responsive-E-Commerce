@@ -58,7 +58,24 @@ function AtualizarCarrinho(){
             totalCompra += val.valor
             quantidadeItens += val.quantidade;
             containerCarrinho.innerHTML += `
-            <p>`+val.nome+` | Quantidade: `+val.quantidade+`</p>
+            <div class="product-carrinho">
+                <img class="product-img-carrinho" src="`+val.img+`" alt="">
+                <div class="product-carrinho-info">
+                    <div class="product-category">
+                        <span>`+val.descricao+`</span>
+                    </div>
+                    <!--tile--->
+                    <a href="#produtos" class="product-title">
+                        `+val.nome+`
+                    </a>
+                    <!--Price--->
+                    <div class="price-buy">
+                        <span class="p-price">`+val.valor+`</span>
+                        <span class="p-quantidade"> | Quantidade:</span>
+                        <span class="p-price">`+val.quantidade+`</span>
+                    </div>
+                </div>
+            </div>
             <hr>
             `;
             document.getElementById("qnt-carrinho").style.display = '';
@@ -71,11 +88,13 @@ function AtualizarCarrinho(){
     var textQuantidade = document.getElementById("qnt-carrinho");
     textQuantidade.textContent = quantidadeItens.toString();
 
+    document.querySelector('.total-pag-carrinho').textContent = " R$ " + totalCompra.toFixed(2).replace(".", ",");
+
     // Alerta de Item inserido no carrinho
     AlertAppearCarrinho();
     setTimeout(function(){
         AlertDisappearCarrinho();
-    },3000);
+    },1500);
 }
 
 //Verifica a quantidade de itens no carrinho para esconder o Icon no painel
@@ -112,14 +131,38 @@ function AlertDisappearCarrinho(){
 //Botão para ENTRAR na tela do carrinho
 document.querySelector('.shopping-cart').addEventListener("click", showShoppingCart);
 function showShoppingCart(){
-    carrinhoPreview.style.display = "";
-    document.querySelector('.shadow').style.display = "";
+    if(quantidadeItens>0)
+    {
+        document.querySelector('.carrinho-preview').style.display = "";
+        document.querySelector('.shadow').style.display = "";
+    }
 }
 
 //Botão de SAIDA da tela de carrinho
-const carrinhoPreview = document.querySelector('.carrinho-preview');
+const carrinhoPreview = document.querySelector('.close-icon');
 carrinhoPreview.addEventListener("click", hideShoppingCart)
 function hideShoppingCart(){
-    carrinhoPreview.style.display = "none";
+    document.querySelector('.carrinho-preview').style.display = "none";
     document.querySelector('.shadow').style.display = "none";
+}
+
+
+document.querySelector('.btn-confirmar').addEventListener("click", goToWhatsapp);
+function goToWhatsapp() {
+    
+    var msg = "*Pedido:* %0A-------------------------------------------------- %0A %0A";
+
+    items.map((val) => 
+    {
+        if(val.quantidade > 0)
+        msg+= "• %20" + val.nome + "\n %20 x %20" + val.quantidade + "%20 - %20 *R$ %20" + (val.valor*val.quantidade).toFixed(2).replace(".", ",") + "*%0A";
+    });
+
+    var url = "https://wa.me/5534991218085?text=" 
+    /*+ "Name: " + name + "%0a"
+    + "Phone: " + phone + "%0a"*/
+    + msg  + "%0A"
+    + "Valor Total: %20" + "*R$ %20" + totalCompra.toFixed(2).replace(".", ",") + "*"; 
+
+    window.open(url, '_blank').focus();
 }
