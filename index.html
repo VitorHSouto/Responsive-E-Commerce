@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./css/carrinho.css"> <!-- CSS -->
     <link rel="stylesheet" href="./css/responsive.css"> <!-- CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!--ICONS GOOGLE-->
-    <script  type="module" src="./js/carrinho.js"></script>
 
     <!-- FONT Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -273,6 +272,16 @@
             </div>
         </div>
         <hr>
+        <div class="product-filter" current-filter="todos">
+            <div class="filter-buttons">
+                <span class="filter active" filter-name="todos">Todos</span>
+                <span class="filter" filter-name="brinco">Brincos</span>
+                <span class="filter" filter-name="bracelete">Braceletes</span>
+                <span class="filter" filter-name="colar">Colares</span>
+                <span class="filter" filter-name="pingente">Pingente</span>
+                <span class="filter" filter-name="tornozeleira">Tornozeleira</span>
+            </div>  
+        </div>
         <div class="products">
             <div id="produtos" class="table-responsive">
             </div>
@@ -295,7 +304,8 @@
     </footer>
 
 
-    
+    <script type="module" src="./js/carrinho.js"></script>
+    <script type="module" src="./js/filtro.js"></script>
     <script src="https://kit.fontawesome.com/9ccc6f41fb.js" crossorigin="anonymous"></script>
 
 </body>

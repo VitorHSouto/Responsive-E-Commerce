@@ -2,45 +2,54 @@
 import {items} from './itens.js';
 
 // Adicionar os itens na div "produtos"
-function InicializarLoja(){
-    var containerProdutos = document.getElementById("produtos");
-    items.map((val) => {
-        containerProdutos.innerHTML += `
+export function InicializarLoja(){
+    var containerProdutos = document.getElementById("produtos"); //Container onde será add os produtos
+    let currentFilter = document.querySelector(".product-filter").getAttribute("current-filter"); //Verifica o filtro ativo
+    let qntItensFiltrados = 0;
 
-        <!--================= `+val.id+` =================-->
-        <div class="product-box">
-            <div class="image-box">
-                <div class="product-img-container">
-                    <!--img=============-->
-                    <div class="product-img">
-                        <a>
-                            <img class="product-img-front" src="`+val.img+`" alt="`+val.nome+`"/>
-                            <img class="product-img-back" src="`+val.img+`" alt="`+val.nome+`"/>
-                        </a>
+    containerProdutos.innerHTML = "";
+    items.map((val) => {
+        if(val.filtro == currentFilter || currentFilter == "todos") //Se o item ser do mesmo tipo que o filtro
+        {                                                           //Filtro ser todos, então irá mostrar
+            if(qntItensFiltrados == 0) qntItensFiltrados++;
+            containerProdutos.innerHTML += `
+
+            <!--================= `+val.id+` =================-->
+            <div class="product-box">
+                <div class="image-box">
+                    <div class="product-img-container">
+                        <!--img=============-->
+                        <div class="product-img">
+                            <a>
+                                <img class="product-img-front" src="`+val.img+`" alt="`+val.nome+`"/>
+                                <img class="product-img-back" src="`+val.img+`" alt="`+val.nome+`"/>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!--text***************************-->
-            <div class="product-box-text">
-                <!--category-->
-                <div class="product-category">
-                    <span>`+val.descricao+`</span>
+                
+                <!--text***************************-->
+                <div class="product-box-text">
+                    <!--category-->
+                    <div class="product-category">
+                        <span>`+val.descricao+`</span>
+                    </div>
+                    <!--tile--->
+                    <a" class="product-title">
+                        `+val.nome+`
+                    </a>
+                    <!--Price--->
+                    <div class="price-buy">
+                        <span class="p-price">R$ `+val.valor+`</span>
+                        <i class="material-icons p-buy-btn item-id" key="`+val.id+`">add_circle</i>
+                    </div>
                 </div>
-                <!--tile--->
-                <a" class="product-title">
-                    `+val.nome+`
-                </a>
-                <!--Price--->
-                <div class="price-buy">
-                    <span class="p-price">R$ `+val.valor+`</span>
-                    <i class="material-icons p-buy-btn item-id" key="`+val.id+`">add_circle</i>
-                </div>
-            </div>
-        </div> 
+            </div> 
 
-        `;
+            `;
+        } 
     })
+    if(qntItensFiltrados == 0) containerProdutos.innerHTML += "Nenhum item Encontrado!";
 }
 
 InicializarLoja();
@@ -52,7 +61,7 @@ function showOld() {
 var totalCompra = 0; //Valor do pedido
 var quantidadeItens = 0; //Quantidade de itens pedidos
 function AtualizarCarrinho(){
-    var containerCarrinho = document.getElementById("carrinho");
+    var containerCarrinho = document.getElementById("carrinho"); //Container onde será adicionado os itens do carrinho
     containerCarrinho.innerHTML = "";
     quantidadeItens = 0;
     totalCompra = 0;
@@ -109,26 +118,26 @@ function AtualizarCarrinho(){
                 </div>
             </div>
             `;
-            document.getElementById("qnt-carrinho").style.display = '';
+            document.getElementById("qnt-carrinho").style.display = ''; //Display que fica acima do Icon do carrinho na Navbar
         }
 
     })
     var textTotal = document.getElementById("carrinho-total");
-    textTotal.textContent = "R$ " + totalCompra.toFixed(2).replace(".", ",");
+    textTotal.textContent = "R$ " + totalCompra.toFixed(2).replace(".", ","); //Formatação correta
     
     var textQuantidade = document.getElementById("qnt-carrinho");
     textQuantidade.textContent = quantidadeItens.toString();
 
-    document.querySelector('.total-pag-carrinho').textContent = " R$ " + totalCompra.toFixed(2).replace(".", ",");
+    document.querySelector('.total-pag-carrinho').textContent = " R$ " + totalCompra.toFixed(2).replace(".", ","); //Formatação correta
 
     // Alerta de Item inserido no carrinho
     AlertAppearCarrinho();
     setTimeout(function(){
         AlertDisappearCarrinho();
-    },1500);
+    },1500); //Após 1,5 segundos irá sumir o alerta
 
-    var linksLess = document.getElementsByClassName("subtrai-carrinho");
-    var linksMore = document.getElementsByClassName("aumenta-carrinho");
+    var linksLess = document.getElementsByClassName("subtrai-carrinho"); //Icon de subtração || Quantidade de itens
+    var linksMore = document.getElementsByClassName("aumenta-carrinho"); //Icon de soma || Quantidade de itens    
 
     for (let i = 0; i < links.length; i++) 
     {
@@ -153,8 +162,8 @@ if(quantidadeItens <= 0){
     document.getElementById("carrinho-total").textContent = "R$ 0,00";
 }
 
+//Adiciona a Todos os produtos o botão de inserir no carrinho
 var links = document.getElementsByClassName("item-id");
-
 for (let i = 0; i < links.length; i++) 
 {
     links[i].addEventListener("click", function(){
@@ -165,13 +174,14 @@ for (let i = 0; i < links.length; i++)
     })    
 }
 
+//Alerta de inserção no carrinho | APARECER
 const alert = document.getElementById('alert');
 function AlertAppearCarrinho(){
     alert.style.display = '';
     alert.classList.add('show');
     alert.classList.remove('hide');
 }
-
+//Alerta de inserção no carrinho | SUMIR
 function AlertDisappearCarrinho(){
     alert.classList.add('hide');
     alert.classList.remove('show');
@@ -181,7 +191,7 @@ function AlertDisappearCarrinho(){
 //Botão para ENTRAR na tela do carrinho
 document.querySelector('.shopping-cart').addEventListener("click", showShoppingCart);
 function showShoppingCart(){
-    if(quantidadeItens>0)
+    if(quantidadeItens>0) //Só é possivel acessar a tela se tiver itens no carrinho
     {
         document.querySelector('.carrinho-preview').style.display = "";
         document.querySelector('.shadow').style.display = "";
@@ -196,6 +206,8 @@ function hideShoppingCart(){
     document.querySelector('.shadow').style.display = "none";
 }
 
+
+//////////////////////////PEDIDO NO WHATSAPP////////////////////////////////////////////
 document.querySelector('.btn-confirmar').addEventListener("click", goToWhatsapp);
 function goToWhatsapp() {
     

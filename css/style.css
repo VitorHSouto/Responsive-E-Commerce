@@ -582,3 +582,34 @@ footer h1{
 .slide img:hover{
     cursor: pointer;
 }
+
+/*---------------- FILTRO DE PRODUTOS ----------------*/
+
+.product-filter{
+    margin: 50px auto;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-buttons .filter{
+    padding: 7px 25px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.filter{
+    max-width: 720px;
+    width: 100%;
+    color: rgb(221, 111, 94);
+    border: 2px solid rgb(221, 111, 94);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter.active,
+.filter:hover{
+    color: #fff;
+    background-color: rgb(221, 111, 94);
+}
