@@ -21,8 +21,8 @@ export function InicializarLoja(){
                         <!--img=============-->
                         <div class="product-img">
                             <a>
-                                <img class="product-img-front" src="`+val.img+`" alt="`+val.nome+`"/>
-                                <img class="product-img-back" src="`+val.img+`" alt="`+val.nome+`"/>
+                                <img class="product-img-front" src="`+val.imgF+`" alt="`+val.nome+`"/>
+                                <img class="product-img-back" src="`+val.imgB+`" alt="`+val.nome+`"/>
                             </a>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ function AtualizarCarrinho(){
             quantidadeItens += val.quantidade;
             containerCarrinho.innerHTML += `
             <div class="product-carrinho">
-                <img class="product-img-carrinho" src="`+val.img+`" alt="">
+                <img class="product-img-carrinho" src="`+val.imgF+`" alt="">
                 <!--DESCRIÇÃO DO ITEM-->
                 <div class="product-carrinho-info">
                     <div class="product-category">

@@ -359,7 +359,7 @@ li{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 .destaques-title h1{
@@ -407,7 +407,10 @@ hr{
     border-radius: 5%;
 
     width: calc(95% / 4);
-    border: 1px solid rgba(0,0,0,0.08);
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(221, 111, 94, 0.705);
     background-color: rgb(247, 247, 247);
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
     position: relative;
@@ -438,6 +441,7 @@ hr{
 
     border-radius: 5%;
 }
+
 .product-img-back{
     display: none;
  }
