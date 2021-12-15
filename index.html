@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css"> <!-- CSS -->
     <link rel="stylesheet" href="./css/carrinho.css"> <!-- CSS -->
+    <link rel="stylesheet" href="./css/informacoes.css"> <!-- CSS -->
     <link rel="stylesheet" href="./css/responsive.css"> <!-- CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!--ICONS GOOGLE-->
 
@@ -71,8 +72,43 @@
                 <h1>Total:</h1>
                 <p class="total-pag-carrinho">R$ 250,32</p>
             </div>
-            <button class="btn-confirmar">Confirmar Compra</button>
+            <button class="btn-seguinte-carrinho">Confirmar Compra</button>
         </div>
+    </div>
+    <!-- PAGINA INFORMAÇÕES -->
+    <div class="info-preview" >
+        <div class="details">
+            <i class="material-icons close-icon">cancel</i>
+        </div>
+        
+        <div class="container">
+            <div class="title">Insira os seus dados</div>
+            <div class="content">
+                <form id="formulario-info">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Nome Completo</span>
+                            <input type="text" id="nome" placeholder="Insira o seu nome Completo" required>
+                        </div>
+                        <div class="input-box" >
+                            <span class="details">CPF</span>
+                            <input type="text" id="cpf" placeholder="Insira o seu CPF" required >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="text" id="email" placeholder="Insira o seu Email" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Número de contato</span>
+                            <input type="text" id="telefone" placeholder="Insira o seu Telefone" required>
+                        </div>
+                    </div>
+                    <div class="btn-seguinte-infos">
+                        <input type="submit" value="Prosseguir">
+                    </div>
+                </form>
+            </div>
+          </div>
     </div>
     <div class="shadow" style="display: none;"></div>
 
@@ -118,7 +154,7 @@
                 <i class="material-icons">auto_awesome</i>
                 <h1>Mais Vendidos</h1>
             </div>
-            <a href="#produtos" class="product-veja-mais">Veja Mais</a>
+            <a href="#todos-produtos" class="product-veja-mais">Veja Mais</a>
         </div>
         <hr>
         <div class="products">
@@ -264,7 +300,7 @@
         </div>
     </div>
 
-    <section class="destaques complete">
+    <section class="destaques complete" id="todos-produtos">
         <div class="title-complete">
             <div class="destaques-title">
                 <i class="material-icons">auto_awesome</i>

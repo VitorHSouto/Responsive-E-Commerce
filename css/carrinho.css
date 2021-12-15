@@ -1,6 +1,6 @@
 /* ------------- TELA DO CARRINHO ------------- */
 
-.carrinho-preview{
+.info-preview, .carrinho-preview{
     overflow:auto;
     position: fixed;
     transform: translate(-50%, -50%);
@@ -19,7 +19,7 @@
     box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.carrinho-preview .details{
+.info-preview .details, .carrinho-preview .details{
     font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
@@ -89,7 +89,7 @@
     margin-right: 2%;
 }
 
-.btn-confirmar{
+.btn-seguinte-carrinho{
     background-color: rgb(221, 111, 94); /* Green */
     border: none;
     color: white;
@@ -105,7 +105,7 @@
     bottom: 0;
     margin: 4% 2% 2% 2%;
 }
-.btn-confirmar:hover{
+.btn-seguinte-carrinho:hover{
     cursor: pointer;
     background-color: rgba(221, 111, 94, 0.719);
 }

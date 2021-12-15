@@ -40,7 +40,7 @@ export function InicializarLoja(){
                     </a>
                     <!--Price--->
                     <div class="price-buy">
-                        <span class="p-price">R$ `+val.valor+`</span>
+                        <span class="p-price">R$ `+(val.valor).toFixed(2).toString().replace(".", ",")+`</span>
                         <i class="material-icons p-buy-btn item-id" key="`+val.id+`">add_circle</i>
                     </div>
                 </div>
@@ -50,6 +50,18 @@ export function InicializarLoja(){
         } 
     })
     if(qntItensFiltrados == 0) containerProdutos.innerHTML += "Nenhum item Encontrado!";
+
+    //Adiciona a Todos os produtos o botão de inserir no carrinho
+    var links = document.getElementsByClassName("item-id");
+    for (let i = 0; i < links.length; i++) 
+    {
+        links[i].addEventListener("click", function(){
+            let key = this.getAttribute('key');
+            items[key].quantidade++;
+            AtualizarCarrinho();
+            return false;
+        })    
+    }
 }
 
 InicializarLoja();
@@ -91,7 +103,7 @@ function AtualizarCarrinho(){
                     </div>
                     <!--Price--->
                     <a href="#produtos" class="product-title">
-                        R$ `+val.valor+`
+                        R$ `+(val.valor).toFixed(2).toString().replace(".", ",")+`
                     </a>
                 </div>
                 <!--QUANTIDADE DE ITENS-->
@@ -113,7 +125,7 @@ function AtualizarCarrinho(){
                     </div>
                     <!--Price--->
                     <a href="#produtos" class="product-title">
-                        R$ `+val.quantidade * val.valor+`
+                        R$ `+(val.quantidade * val.valor).toFixed(2).toString().replace(".", ",")+`
                     </a>
                 </div>
             </div>
@@ -139,7 +151,7 @@ function AtualizarCarrinho(){
     var linksLess = document.getElementsByClassName("subtrai-carrinho"); //Icon de subtração || Quantidade de itens
     var linksMore = document.getElementsByClassName("aumenta-carrinho"); //Icon de soma || Quantidade de itens    
 
-    for (let i = 0; i < links.length; i++) 
+    for (let i = 0; i < linksLess.length; i++) 
     {
         linksLess[i].addEventListener("click", function(){
             let key = this.getAttribute('key');
@@ -160,18 +172,6 @@ function AtualizarCarrinho(){
 if(quantidadeItens <= 0){
     document.getElementById("qnt-carrinho").style.display = "none";
     document.getElementById("carrinho-total").textContent = "R$ 0,00";
-}
-
-//Adiciona a Todos os produtos o botão de inserir no carrinho
-var links = document.getElementsByClassName("item-id");
-for (let i = 0; i < links.length; i++) 
-{
-    links[i].addEventListener("click", function(){
-        let key = this.getAttribute('key');
-        items[key].quantidade++;
-        AtualizarCarrinho();
-        return false;
-    })    
 }
 
 //Alerta de inserção no carrinho | APARECER
@@ -208,10 +208,35 @@ function hideShoppingCart(){
 
 
 //////////////////////////PEDIDO NO WHATSAPP////////////////////////////////////////////
-document.querySelector('.btn-confirmar').addEventListener("click", goToWhatsapp);
+
+document.querySelector('.btn-seguinte-carrinho').addEventListener("click", goToInfo);
+function goToInfo()
+{
+    console.log("TESTE");
+    hideShoppingCart();
+    document.querySelector('.shadow').style.display = "";
+    document.querySelector('.info-preview').style.display = "block";
+}
+
+var msg = "";
+var form = document.getElementById('formulario-info');
+form.addEventListener('submit', function(e) 
+{
+    let nome = document.getElementById('nome').value;
+    let email = document.getElementById("email").value;
+    let cpf = document.getElementById("cpf").value;
+    let telefone = document.getElementById("telefone").value;
+
+    msg += "Olá,%20meu nome é " + nome + "%0A";
+    msg += "▸ CPF: %20" + cpf + "   ▸ Contato: %20" + telefone + "   ▸ Email: %20" + email + "%0A";
+    msg += "*E esse é o meu pedido:* %0A--------------------------------------------------  %0A %0A";
+
+    // impede o envio do form
+    e.preventDefault();
+    goToWhatsapp();
+});
+
 function goToWhatsapp() {
-    
-    var msg = "*Pedido:* %0A-------------------------------------------------- %0A %0A";
 
     items.map((val) => 
     {
@@ -226,4 +251,14 @@ function goToWhatsapp() {
     + "➤ %20 Valor Total: %20" + "*R$ %20" + totalCompra.toFixed(2).replace(".", ",") + "*"; 
 
     window.open(url, '_blank').focus();
+    document.querySelector('.info-preview').style.display = "none";
+    document.querySelector('.shadow').style.display = "none";
+    limparCarrinho();
+}
+
+function limparCarrinho(){
+    items.map((val) => {
+        val.quantidade = 0;
+    })
+    AtualizarCarrinho();
 }
