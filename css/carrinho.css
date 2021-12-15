@@ -1,8 +1,10 @@
 /* ------------- TELA DO CARRINHO ------------- */
 
 .carrinho-preview{
+    overflow:auto;
     position: fixed;
     transform: translate(-50%, -50%);
+    justify-content: space-between;
     z-index: 6;
 
     top: 50%;
@@ -45,12 +47,11 @@
 .details .close-icon{
     color: rgba(0, 0, 0, 0.65);
     font-size: 25px !important;
-    margin-bottom: -2%;
+    margin-bottom: 2%;
 }
 
 .close-icon:hover{
     color: rgba(0, 0, 0, 0.45);
-    font-size: 26px !important;
     cursor: pointer;
 }
 
@@ -61,19 +62,27 @@
 .total-txt{
     display: flex;
     align-items: center;
-    position: absolute;
+    position: relative;
     right: 0;
     bottom: 0;
     margin: 4% 2% 2% 2%;
 }
 
 .product-carrinho{
+    border: 1px solid rgba(0,0,0,0.08);
+    background-color: rgb(247, 247, 247);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+
     display: flex;
     align-self: center;
     margin: -2% 2% 2% 2%;
+    padding: 1%;
 }
 
 .product-img-carrinho{
+    border: 1px solid rgba(0,0,0,0.08);
+    background-color: rgb(247, 247, 247);
     height: 10%;
     width: 10%;
     border-radius: 10%;
@@ -92,7 +101,7 @@
     font-size: 16px;
     border-radius: 12px;
 
-    position: absolute;
+    position: relative;
     bottom: 0;
     margin: 4% 2% 2% 2%;
 }
@@ -109,4 +118,26 @@
 
 .total-txt h1{
     font-weight: lighter;
+}
+
+.product-carrinho-info{
+    padding: 2%;
+}
+
+.product-carrinho-info .quantidade-produtos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.product-carrinho-info .quantidade-produtos a{
+    text-decoration: none;
+    text-align: center;
+    color: rgb(221, 111, 94);
+    font-weight: 900;
+}
+
+.product-carrinho-info .quantidade-produtos a:hover{
+    color: rgb(231, 74, 49);
+    text-decoration: underline;
 }

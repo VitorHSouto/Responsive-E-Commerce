@@ -45,38 +45,69 @@ function InicializarLoja(){
 
 InicializarLoja();
 
+function showOld() {
+    alert('test');
+}
+
 var totalCompra = 0; //Valor do pedido
 var quantidadeItens = 0; //Quantidade de itens pedidos
 function AtualizarCarrinho(){
     var containerCarrinho = document.getElementById("carrinho");
     containerCarrinho.innerHTML = "";
     quantidadeItens = 0;
+    totalCompra = 0;
     items.map((val) => {
 
         if(val.quantidade > 0)
         {
-            totalCompra += val.valor
+            totalCompra += val.valor * val.quantidade;
             quantidadeItens += val.quantidade;
             containerCarrinho.innerHTML += `
             <div class="product-carrinho">
                 <img class="product-img-carrinho" src="`+val.img+`" alt="">
+                <!--DESCRIÇÃO DO ITEM-->
                 <div class="product-carrinho-info">
                     <div class="product-category">
                         <span>`+val.descricao+`</span>
                     </div>
                     <!--tile--->
                     <a href="#produtos" class="product-title">
-                        `+val.nome+`
+                    `+val.nome+`
                     </a>
+                </div>
+                <!--VALOR UNITÁRIO-->
+                <div class="product-carrinho-info">
+                    <div class="product-category">
+                        <span>Item unitário</span>
+                    </div>
                     <!--Price--->
-                    <div class="price-buy">
-                        <span class="p-price">`+val.valor+`</span>
-                        <span class="p-quantidade"> | Quantidade:</span>
-                        <span class="p-price">`+val.quantidade+`</span>
+                    <a href="#produtos" class="product-title">
+                        R$ `+val.valor+`
+                    </a>
+                </div>
+                <!--QUANTIDADE DE ITENS-->
+                <div class="product-carrinho-info">
+                    <div class="product-category">
+                        <span>Quantidade</span>
+                    </div>
+                    <!--Price--->
+                    <div class="quantidade-produtos">
+                        <a href="#" key="`+val.id+`" class="subtrai-carrinho">-</a>
+                        <p>`+val.quantidade+`</p>
+                        <a href="#" key="`+val.id+`" class="aumenta-carrinho">+</a>
                     </div>
                 </div>
+                <!--VALOR TOTAL DO ITEM-->
+                <div class="product-carrinho-info">
+                    <div class="product-category">
+                        <span>Valor do item</span>
+                    </div>
+                    <!--Price--->
+                    <a href="#produtos" class="product-title">
+                        R$ `+val.quantidade * val.valor+`
+                    </a>
+                </div>
             </div>
-            <hr>
             `;
             document.getElementById("qnt-carrinho").style.display = '';
         }
@@ -95,6 +126,25 @@ function AtualizarCarrinho(){
     setTimeout(function(){
         AlertDisappearCarrinho();
     },1500);
+
+    var linksLess = document.getElementsByClassName("subtrai-carrinho");
+    var linksMore = document.getElementsByClassName("aumenta-carrinho");
+
+    for (let i = 0; i < links.length; i++) 
+    {
+        linksLess[i].addEventListener("click", function(){
+            let key = this.getAttribute('key');
+            items[key].quantidade--;
+            AtualizarCarrinho();
+            return false;
+        });
+        linksMore[i].addEventListener("click", function(){
+            let key = this.getAttribute('key');
+            items[key].quantidade++;
+            AtualizarCarrinho();
+            return false;
+        });   
+    }
 }
 
 //Verifica a quantidade de itens no carrinho para esconder o Icon no painel
@@ -140,12 +190,11 @@ function showShoppingCart(){
 
 //Botão de SAIDA da tela de carrinho
 const carrinhoPreview = document.querySelector('.close-icon');
-carrinhoPreview.addEventListener("click", hideShoppingCart)
+carrinhoPreview.addEventListener("click", hideShoppingCart);
 function hideShoppingCart(){
     document.querySelector('.carrinho-preview').style.display = "none";
     document.querySelector('.shadow').style.display = "none";
 }
-
 
 document.querySelector('.btn-confirmar').addEventListener("click", goToWhatsapp);
 function goToWhatsapp() {

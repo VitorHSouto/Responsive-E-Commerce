@@ -13,6 +13,11 @@
     .product-box{
         width: calc(95% / 3);
     }
+
+    .product-img-carrinho{
+        height: 20%;
+        width: 20%;
+    }
 }
 
 @media screen and (max-width:650px) {
@@ -43,6 +48,15 @@
 
     .product-box{
         width: calc(95% / 2);
+    }
+
+    .product-img-carrinho{
+        height: 30%;
+        width: 30%;
+    }
+
+    .product-carrinho{
+        display: block;
     }
 }
 
