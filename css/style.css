@@ -591,20 +591,20 @@ footer h1{
 
 .product-filter{
     margin: 50px auto;
+    padding: 7px 25px;
     max-width: 1100px;
     display: flex;
     justify-content: center;
 }
 
 .filter-buttons .filter{
-    padding: 7px 25px;
+    padding: 0px 25px;
     font-size: 18px;
     font-weight: 500;
 }
 
-.filter{
-    max-width: 720px;
-    width: 100%;
+.filter{    
+    margin-bottom: 50px;
     color: rgb(221, 111, 94);
     border: 2px solid rgb(221, 111, 94);
     border-radius: 50px;
